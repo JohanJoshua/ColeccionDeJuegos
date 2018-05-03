@@ -36,7 +36,7 @@
                     <navigationItem key="navigationItem" id="Xva-93-gS8">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="H6X-KE-03x">
                             <connections>
-                                <segue destination="Yr9-A1-1oZ" kind="show" id="Llk-Dm-fK7"/>
+                                <segue destination="Yr9-A1-1oZ" kind="show" identifier="juegoSegue" id="Llk-Dm-fK7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -60,31 +60,47 @@
                                 <rect key="frame" x="32" y="84" width="257" height="384"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titulo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xbI-XM-2AZ">
-                                <rect key="frame" x="32" y="488" width="257" height="30"/>
+                                <rect key="frame" x="31.5" y="488" width="257" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCj-oE-uxk">
-                                <rect key="frame" x="132.5" y="538" width="55" height="30"/>
+                                <rect key="frame" x="50" y="538" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="1lQ-xs-pvW"/>
+                                </constraints>
                                 <state key="normal" title="Agregar"/>
                                 <connections>
                                     <action selector="agregarTapped:" destination="Yr9-A1-1oZ" eventType="touchUpInside" id="Efa-Gr-Vmz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Os1-NS-CbL">
+                                <rect key="frame" x="210" y="538" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Rnf-qs-1Pz"/>
+                                </constraints>
+                                <state key="normal" title="Eliminar"/>
+                                <connections>
+                                    <action selector="eliminarTapped:" destination="Yr9-A1-1oZ" eventType="touchUpInside" id="tKn-PD-yeY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Os1-NS-CbL" firstAttribute="leading" secondItem="UCj-oE-uxk" secondAttribute="trailing" constant="80" id="CHL-ZY-Sah"/>
                             <constraint firstItem="Sdq-mu-wwE" firstAttribute="bottom" secondItem="HFP-br-V7S" secondAttribute="bottom" constant="100" id="LmV-rS-eGR"/>
                             <constraint firstItem="xbI-XM-2AZ" firstAttribute="width" secondItem="HFP-br-V7S" secondAttribute="width" id="NJx-nC-7iO"/>
-                            <constraint firstItem="UCj-oE-uxk" firstAttribute="centerX" secondItem="T0E-Kh-qFu" secondAttribute="centerX" id="PSu-1o-WSM"/>
                             <constraint firstItem="HFP-br-V7S" firstAttribute="leading" secondItem="Sdq-mu-wwE" secondAttribute="leading" constant="32" id="T6N-NM-6YK"/>
                             <constraint firstItem="xbI-XM-2AZ" firstAttribute="centerX" secondItem="T0E-Kh-qFu" secondAttribute="centerX" id="Xxb-5Z-ryg"/>
+                            <constraint firstItem="Sdq-mu-wwE" firstAttribute="trailing" secondItem="Os1-NS-CbL" secondAttribute="trailing" constant="50" id="b9U-oz-7qo"/>
                             <constraint firstItem="xbI-XM-2AZ" firstAttribute="top" secondItem="HFP-br-V7S" secondAttribute="bottom" constant="20" id="haD-lH-ZSp"/>
                             <constraint firstItem="UCj-oE-uxk" firstAttribute="top" secondItem="xbI-XM-2AZ" secondAttribute="bottom" constant="20" id="iKQ-B5-so7"/>
                             <constraint firstItem="HFP-br-V7S" firstAttribute="centerX" secondItem="T0E-Kh-qFu" secondAttribute="centerX" id="mko-jg-Kxl"/>
                             <constraint firstItem="Sdq-mu-wwE" firstAttribute="trailing" secondItem="HFP-br-V7S" secondAttribute="trailing" constant="31" id="sel-US-bIU"/>
                             <constraint firstItem="HFP-br-V7S" firstAttribute="top" secondItem="Sdq-mu-wwE" secondAttribute="top" constant="20" id="t3B-JR-mEb"/>
+                            <constraint firstItem="Os1-NS-CbL" firstAttribute="top" secondItem="xbI-XM-2AZ" secondAttribute="bottom" constant="20" id="tEp-A0-2o7"/>
+                            <constraint firstItem="UCj-oE-uxk" firstAttribute="leading" secondItem="Sdq-mu-wwE" secondAttribute="leading" constant="50" id="ube-XR-vvM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sdq-mu-wwE"/>
                     </view>
@@ -104,6 +120,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="JuegoImageView" destination="HFP-br-V7S" id="G0f-5V-i4w"/>
+                        <outlet property="agregarActualizarBoton" destination="UCj-oE-uxk" id="tgz-AK-wUx"/>
+                        <outlet property="eliminarBoton" destination="Os1-NS-CbL" id="dkF-TJ-arF"/>
                         <outlet property="tituloTextField" destination="xbI-XM-2AZ" id="FYh-C3-jUx"/>
                     </connections>
                 </viewController>
